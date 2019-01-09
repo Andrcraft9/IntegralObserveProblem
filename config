@@ -5,7 +5,7 @@
 1e-6 : eps, stop criteria
 0.001   : mu (viscosity)
 0.5   : b (convect)
-10.0  : tau (method step)
-0.0001   : alpha (main parameter)
+100.0  : tau (method step)
+0.0001  : alpha (main parameter)
 0.0   : coeff1 (disturb) 
 0.0   : coeff2 (disturb)

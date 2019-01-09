@@ -48,6 +48,18 @@ int main(int argc, char** argv)
     double alpha = std::stof(params[8]);
     double coeff1 = std::stof(params[9]);
     double coeff2 = std::stof(params[10]);
+
+    if (tau == 0)
+    {
+        tau = 2.0 / (2.0 * alpha + 1);
+        std::cout << "Adaptive tau, tau = 2 / (2a + 1) = " << tau << std::endl;
+    }
+
+    if (tau < 0)
+    {
+        tau = fabs(tau) / pow(alpha, 0.2);
+        std::cout << "Adaptive tau, tau = C / (a**0.2) = " << tau << std::endl;
+    }
   
     SolverFDM solver(mu, b, M, T, TN, tau, alpha);
 

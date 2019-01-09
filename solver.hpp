@@ -28,6 +28,9 @@ private:
     double tau;
     double alpha;
     
+    // tmp
+    //std::vector<double> rand_nums;
+
     // No copy
     SolverFDM(const SolverFDM& m);
     SolverFDM& operator=(const SolverFDM& m);
@@ -49,6 +52,7 @@ private:
         double tj = j*dt;
 
         //return 0.0;
+        //return rand_nums[index(i, j)] + (sin(M_PI * xi) * (GAMMA + mu * GAMMA * tj * pow(M_PI, 2) + b * GAMMA * tj) - GAMMA * tj);
         return (sin(M_PI * xi) * (GAMMA + mu * GAMMA * tj * pow(M_PI, 2) + b * GAMMA * tj) - GAMMA * tj);
     }
 
@@ -77,6 +81,15 @@ public:
     SolverFDM(double mu, double b, int M, double T, int TN, double tau, double alpha) : 
         mu(mu), b(b), M(M), T(T), TN(TN), tau(tau), alpha(alpha)
     {
+        /*
+        rand_nums.resize((M+1)*(TN+1));
+        std::uniform_real_distribution<double> unif(-1.0, 1.0);
+        std::default_random_engine re;
+        for(int j = 0; j <= TN; ++j)
+            for(int i = 0; i <= M; ++i)
+                rand_nums[index(i, j)] = (1000.0) * unif(re);
+        */
+
         //A = -1.0; B = 1.0;
         //b = 1.0;
         A = 0.0; B = 1.0;
