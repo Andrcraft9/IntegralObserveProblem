@@ -1,0 +1,11 @@
+100    : M (space points)
+100    : TN (time points)
+0.1    : T (max time)
+100000    : Maximum iterations
+1e-6 : eps, stop criteria
+0.001   : mu (viscosity)
+0.5   : b (convect)
+10.0  : tau (method step)
+0.0001   : alpha (main parameter)
+0.0   : coeff1 (disturb) 
+0.0   : coeff2 (disturb)
